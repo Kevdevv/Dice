@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: lightyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 16px;
+
+}
+
+div.container-fluid {
+    background: white;
+    height: 850px;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-image: url(./images/background.png);
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+}
+
+img:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
