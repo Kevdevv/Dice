@@ -16,16 +16,16 @@
             <div class="col text-center mt-4" style="font-size: 1.5rem"><span style="font-weight: 300;" class="d-flex align-items-center d-flex justify-content-center"><img id="new-game" class="me-2" src="./images/plus-circle.svg"> New game</span></div>
         </div>
 
-        <div class="row d-flex align-items-center" style="height: 550px">
-            <div class="col text-center" style="line-height: 5rem; font-size: 3.5rem;">PLAYER 1<br><span style="color: gray; font-weight: 300; font-size: 5rem;">0</span></div>
+        <div class="row d-flex align-items-center" style="height: 60%">
+            <div id="p1" class="col text-center" style="line-height: 5rem; font-size: 3.5rem;">PLAYER 1<br><span id="score-p1" style="color: gray; font-weight: 300; font-size: 5rem;">0</span></div>
             <div id="dice" class="shadow d-flex align-items-center d-flex justify-content-center" style="font-size: 3.5rem; background: white; height: 180px; width: 180px;">1</div>
-            <div class="col text-center" style="line-height: 5rem; font-size: 3.5rem;">PLAYER 2<br><span style="color: gray; font-weight: 300; font-size: 5rem;">0</span></div>
+            <div id="p2" class="col text-center" style="line-height: 5rem; font-size: 3.5rem;">PLAYER 2<br><span id="score-p2" style="color: gray; font-weight: 300; font-size: 5rem;">0</span></div>
         </div>
 
         <div class="row">
-            <div class="d-flex flex-column justify-content-center align-items-center" style="line-height: 2.5rem; margin-left: 17%; height: 120px; width: 180px; background: rgb(245, 73, 73);">Current<span style="color: white; font-size: 1.8rem">0</span></div>
-            <div class="col text-center d-flex flex-column align-items-center" style="line-height: 4rem;"><span class="d-flex align-items-center d-flex justify-content-center" style="font-size: 1.5rem; font-weight: 300;"><img id="roll-dice" class="me-2" src="./images/arrow-repeat.svg">ROLL DICE</span><span class="d-flex align-items-center d-flex justify-content-center" style="font-size: 1.5rem; font-weight: 300;"><img class="me-2" src="./images/box-arrow-in-down.svg"> HOLD</span></div>
-            <div class="d-flex flex-column justify-content-center align-items-center" style="line-height: 2.5rem; margin-right: 17%; height: 120px; width: 180px; background: rgb(245, 73, 73);">Current<span style="color: white; font-size: 1.8rem">0</span></div>
+            <div class="d-flex flex-column justify-content-center align-items-center" style="line-height: 2.5rem; margin-left: 17%; height: 120px; width: 180px; background: rgb(245, 73, 73);">Current<span id="current-p1" style="color: white; font-size: 1.8rem">0</span></div>
+            <div class="col text-center d-flex flex-column align-items-center" style="line-height: 4rem;"><span class="d-flex align-items-center d-flex justify-content-center" style="font-size: 1.5rem; font-weight: 300;"><img id="roll-dice" class="me-2" src="./images/arrow-repeat.svg">ROLL DICE</span><span id="hold" class="d-flex align-items-center d-flex justify-content-center" style="font-size: 1.5rem; font-weight: 300;"><img class="me-2" src="./images/box-arrow-in-down.svg"> HOLD</span></div>
+            <div class="d-flex flex-column justify-content-center align-items-center" style="line-height: 2.5rem; margin-right: 17%; height: 120px; width: 180px; background: rgb(245, 73, 73);">Current<span id="current-p2" style="color: white; font-size: 1.8rem">0</span></div>
         </div>
     </div>
 
