@@ -32,8 +32,7 @@ function DicePlayerOne() {
     dice.innerHTML = random
     
     if (random == 1) {
-        scorePlayerOne.innerHTML = 0
-        scoreTab = []
+
         currentPlayerOne.innerHTML = 0
         tab = []
     }
@@ -70,8 +69,7 @@ function DicePlayerTwo() {
     dice.innerHTML = random
     
     if (random == 1) {
-        scorePlayerTwo.innerHTML = 0
-        scoreTabTwo = []
+     
         currentPlayerTwo.innerHTML = 0
         tabTwo = []
     }
@@ -118,6 +116,11 @@ function hold() {
     
     scorePlayerOne.innerHTML = sumWithInitial
 
+    if (sumWithInitial >= '100') {
+        alert('Player 1 win')
+        reload()
+    }
+
     currentPlayerOne.innerHTML = 0
     tab = []
 
@@ -132,7 +135,6 @@ function hold() {
 }
 
 function whoPlay(joueur) {
-    console.log(joueur)
 
     if (joueur === 1) {
         console.log('p1')
@@ -140,6 +142,8 @@ function whoPlay(joueur) {
         rollDice.addEventListener('click', DicePlayerOne)
         holdButton.addEventListener('click', hold)
         holdButton.removeEventListener('click', holdTwo)
+        playerTwo.classList.remove('red')
+        playerOne.classList.add('red')
     } 
 
     if (joueur === 2) {
@@ -148,6 +152,8 @@ function whoPlay(joueur) {
         rollDice.addEventListener('click', DicePlayerTwo)
         holdButton.addEventListener('click', holdTwo)
         holdButton.removeEventListener('click', hold)
+        playerTwo.classList.add('red')
+        playerOne.classList.remove('red')
     }
 
 }
@@ -167,6 +173,11 @@ function holdTwo() {
     )
     
     scorePlayerTwo.innerHTML = sumWithInitial
+
+    if (sumWithInitial >= '100') {
+        alert('Player 2 win')
+        reload()
+    }
 
     currentPlayerTwo.innerHTML = 0
     tabTwo = []
