@@ -26,3 +26,11 @@ img:hover {
     cursor: pointer;
     opacity: 0.5;
 }
+
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}

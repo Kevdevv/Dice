@@ -12,43 +12,18 @@ let scoreTab = []
 let tabTwo = []
 let scoreTabTwo = []
 let holdButton = document.getElementById('hold')
+let button = document.getElementById('test')
 
 
 
-let player = 1
-if (dice.innerHTML == '1') {
-    player = 2
-}
-console.log(dice.innerHTML)
-function whoPlay() {
+function player() {
+    return 1
+  }
+  let joueur = player()
 
-if (player == 1) {
-    DicePlayerOne()
-} else if (player == 2) {
-    DicePlayerTwo()
-}
+  whoPlay(joueur)
 
-}
-
-
-function whoHold() {
-    let player = 1
-
-if (dice.innerHTML == '1') {
-    player = 2
-}
-
-if (player == 1) {
-    hold()
-} else if (player == 2) {
-    holdTwo()
-}
-}
-
-
-
-
-function DicePlayerOne(min, max) {
+function DicePlayerOne() {
     
     min = 1
     max = 7
@@ -61,14 +36,7 @@ function DicePlayerOne(min, max) {
         scoreTab = []
         currentPlayerOne.innerHTML = 0
         tab = []
-        //player = 2
     }
-/*
-    if (player == 2) {
-       rollDice.addEventListener('click', DicePlayerTwo)
-       //alert(player)
-    }
-    */
     
 
     if (random > 1) {
@@ -82,9 +50,18 @@ function DicePlayerOne(min, max) {
     )
     
     currentPlayerOne.innerHTML = sumWithInitial
+
+    if (currentPlayerOne.innerHTML == '0') {
+        function player() {
+            return 2
+          }
+          let joueur = player()
+        
+          whoPlay(joueur)
+    }
 }
 
-function DicePlayerTwo(min, max) {
+function DicePlayerTwo() {
     
     min = 1
     max = 7
@@ -110,6 +87,15 @@ function DicePlayerTwo(min, max) {
     )
     
     currentPlayerTwo.innerHTML = sumWithInitial
+
+    if (currentPlayerTwo.innerHTML == '0') {
+        function player() {
+            return 1
+          }
+          let joueur = player()
+        
+          whoPlay(joueur)
+    }
 }
 
 
@@ -118,7 +104,6 @@ function reload() {
 }
 
 function hold() {
-    alert('one')
     scorePlayerOne.innerHTML = currentPlayerOne.innerHTML
    
     let score = scorePlayerOne.innerHTML
@@ -135,10 +120,40 @@ function hold() {
 
     currentPlayerOne.innerHTML = 0
     tab = []
+
+
+    function player() {
+        return 2
+      }
+      let joueur = player()
+    
+      whoPlay(joueur)
+
+}
+
+function whoPlay(joueur) {
+    console.log(joueur)
+
+    if (joueur === 1) {
+        console.log('p1')
+        rollDice.removeEventListener('click', DicePlayerTwo)
+        rollDice.addEventListener('click', DicePlayerOne)
+        holdButton.addEventListener('click', hold)
+        holdButton.removeEventListener('click', holdTwo)
+    } 
+
+    if (joueur === 2) {
+    console.log('p2')
+        rollDice.removeEventListener('click', DicePlayerOne)
+        rollDice.addEventListener('click', DicePlayerTwo)
+        holdButton.addEventListener('click', holdTwo)
+        holdButton.removeEventListener('click', hold)
+    }
+
 }
 
 function holdTwo() {
-    alert('two')
+
     scorePlayerTwo.innerHTML = currentPlayerTwo.innerHTML
    
     let score = scorePlayerTwo.innerHTML
@@ -155,10 +170,16 @@ function holdTwo() {
 
     currentPlayerTwo.innerHTML = 0
     tabTwo = []
+
+
+    function player() {
+        return 1
+      }
+      let joueur = player()
+    
+      whoPlay(joueur)
+      
 }
 
-
 rollDice.addEventListener('click', whoPlay)
-//rollDice.addEventListener('click', DicePlayerTwo)
 newGame.addEventListener('click', reload)
-holdButton.addEventListener('click', whoHold)
