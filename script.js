@@ -19,9 +19,9 @@ let button = document.getElementById('test')
 function player() {
     return 1
   }
-  let joueur = player()
+  let gamer = player()
 
-  whoPlay(joueur)
+  whoPlay(gamer)
 
 function DicePlayerOne() {
     
@@ -54,9 +54,9 @@ function DicePlayerOne() {
         function player() {
             return 2
           }
-          let joueur = player()
+          let gamer = player()
         
-          whoPlay(joueur)
+          whoPlay(gamer)
     }
 }
 
@@ -90,9 +90,9 @@ function DicePlayerTwo() {
         function player() {
             return 1
           }
-          let joueur = player()
+          let gamer = player()
         
-          whoPlay(joueur)
+          whoPlay(gamer)
     }
 }
 
@@ -128,15 +128,15 @@ function hold() {
     function player() {
         return 2
       }
-      let joueur = player()
+      let gamer = player()
     
-      whoPlay(joueur)
+      whoPlay(gamer)
 
 }
 
-function whoPlay(joueur) {
+function whoPlay(gamer) {
 
-    if (joueur === 1) {
+    if (gamer === 1) {
         console.log('p1')
         rollDice.removeEventListener('click', DicePlayerTwo)
         rollDice.addEventListener('click', DicePlayerOne)
@@ -146,7 +146,7 @@ function whoPlay(joueur) {
         playerOne.classList.add('red')
     } 
 
-    if (joueur === 2) {
+    if (gamer === 2) {
     console.log('p2')
         rollDice.removeEventListener('click', DicePlayerOne)
         rollDice.addEventListener('click', DicePlayerTwo)
@@ -186,9 +186,9 @@ function holdTwo() {
     function player() {
         return 1
       }
-      let joueur = player()
+      let gamer = player()
     
-      whoPlay(joueur)
+      whoPlay(gamer)
       
 }
 
