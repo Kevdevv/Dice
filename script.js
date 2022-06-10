@@ -1,3 +1,5 @@
+                                //---------------------------------------Variable-------------------/
+
 let dice = document.getElementById('dice')
 let rollDice = document.getElementById('roll-dice')
 let newGame = document.getElementById('new-game')
@@ -14,14 +16,18 @@ let scoreTabTwo = []
 let holdButton = document.getElementById('hold')
 let button = document.getElementById('test')
 
+                                    //-------------------------------Fonctions----------------------------/
 
-
+ //Fonction pour initialiser le parametre "gamer" a 1
+                                    
 function player() {
     return 1
   }
   let gamer = player()
 
   whoPlay(gamer)
+
+ //Fonction de lancer de dé pour le joueur 1, qui passe le paramètre gamer a 2 si le current tombe a 0 ce qui permet de basculer sur les fonction du joueur 2 
 
 function DicePlayerOne() {
     
@@ -42,6 +48,8 @@ function DicePlayerOne() {
         tab.push(random)
     }    
 
+   //Récupère les élément du tableau et les additione
+
     const initialValue = 0;
     const sumWithInitial = tab.reduce(
       (previousValue, currentValue) => previousValue + currentValue,
@@ -59,6 +67,8 @@ function DicePlayerOne() {
           whoPlay(gamer)
     }
 }
+
+//Fonction de lancer de dé pour le joueur 2 avec le même système pour basculer sur le joueur 1 si le current passe à 0
 
 function DicePlayerTwo() {
     
@@ -96,10 +106,13 @@ function DicePlayerTwo() {
     }
 }
 
+//function du bouton new game qui reload la page
 
 function reload() {
     location.reload()
 }
+
+//Fonction pour le joueur 1 qui ajouter le score, vide le current, switch de joueur et déclenche la victoire si le score est >= à 100
 
 function hold() {
     scorePlayerOne.innerHTML = currentPlayerOne.innerHTML
@@ -134,6 +147,8 @@ function hold() {
 
 }
 
+//Fonction qui récupère le paramètre "gamer" et qui joue les fonctions en conséquent
+
 function whoPlay(gamer) {
 
     if (gamer === 1) {
@@ -157,6 +172,8 @@ function whoPlay(gamer) {
     }
 
 }
+
+//Fonction pour le joueur 2 qui ajouter le score, vide le current, switch de joueur et déclenche la victoire si le score est >= à 100
 
 function holdTwo() {
 
@@ -191,6 +208,10 @@ function holdTwo() {
       whoPlay(gamer)
       
 }
+
+                        //------------------------------Fin des fonction-------------------------/
+
+//écouteurs
 
 rollDice.addEventListener('click', whoPlay)
 newGame.addEventListener('click', reload)
